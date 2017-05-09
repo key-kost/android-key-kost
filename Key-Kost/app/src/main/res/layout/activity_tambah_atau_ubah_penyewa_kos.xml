@@ -6,66 +6,111 @@
     android:layout_height="match_parent"
     tools:context="com.tna_team.key_kost.TambahAtauUbahPenyewaKos">
 
-    <EditText
-        android:id="@+id/edPertama"
+    <RelativeLayout
+        android:id="@+id/fieldInputSection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
-        android:ems="10"
-        android:hint="Nama"
-        android:inputType="textPersonName" />
+        android:background="@color/primary"
+        android:layout_above="@+id/relativeLayout"
+        android:layout_alignParentTop="true">
 
-    <EditText
-        android:id="@+id/edEmail"
+        <EditText
+            android:id="@+id/edNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="38dp"
+            android:ems="10"
+            android:hint="Nama"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/edEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/edNama"
+            android:layout_below="@+id/edNama"
+            android:layout_marginTop="21dp"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/edNomorHandphone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="No Handphone"
+            android:inputType="phone"
+            android:layout_below="@+id/edEmail"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/edInstansi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Instansi/Sekolah/Perguruan Tinggi"
+            android:inputType="textPersonName"
+            android:layout_marginTop="25dp"
+            android:layout_below="@+id/edNomorHandphone"
+            android:layout_alignParentStart="true" />
+
+
+        <EditText
+            android:id="@+id/edUang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="Uang Kos "
+            android:inputType="numberDecimal"
+            android:layout_below="@+id/edInstansi"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true" />
+
+        <EditText
+            android:id="@+id/edTanggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:hint="Tanggal Habis"
+            android:inputType="date"
+            android:layout_below="@+id/edUang"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/edPertama"
-        android:layout_below="@+id/edPertama"
-        android:layout_marginTop="21dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/edNomorHandphone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/edEmail"
-        android:layout_marginTop="26dp"
-        android:ems="10"
-        android:hint="No Handphone"
-        android:inputType="textPersonName|phone" />
-
-    <EditText
-        android:id="@+id/edInstansi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:hint="Instansi/Sekolah/Perguruan Tinggi"
-        android:inputType="textPersonName" />
-
-    <Button
-        android:id="@+id/btnOK"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="34dp"
-        android:elevation="0dp"
-        android:text="OK"
+        android:layout_height="55dp"
+        android:background="@color/primary_dark"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="57dp" />
+        android:id="@+id/relativeLayout">
 
-    <Button
-        android:id="@+id/btnBatal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/btnOK"
-        android:layout_marginStart="61dp"
-        android:layout_toEndOf="@+id/btnOK"
-        android:text="Batal" />
+        <Button
+            android:id="@+id/btnOK"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="57dp"
+            android:elevation="0dp"
+            android:text="OK"
+            android:layout_alignParentBottom="true"
+            android:layout_alignTop="@+id/btnBatal" />
+
+        <Button
+            android:id="@+id/btnBatal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Batal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="68dp" />
+    </RelativeLayout>
 </RelativeLayout>

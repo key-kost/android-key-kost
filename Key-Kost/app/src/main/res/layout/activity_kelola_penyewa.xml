@@ -9,7 +9,8 @@
     <RelativeLayout
         android:id="@+id/headerSection"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/primary_dark">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -23,15 +24,16 @@
             android:id="@+id/textView"
             android:layout_width="337dp"
             android:layout_height="48dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageView2"
             android:fontFamily="casual"
             android:text="Kelola Penyewa Kos"
             android:textAlignment="center"
             android:textAllCaps="false"
+            android:textColor="@color/accent"
             android:textSize="30sp"
             tools:layout_editor_absoluteX="24dp"
-            tools:layout_editor_absoluteY="219dp"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/imageView2" />
+            tools:layout_editor_absoluteY="219dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -43,7 +45,7 @@
         android:layout_marginTop="49dp">
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/edSearch"
             android:layout_width="376dp"
             android:layout_height="46dp"
             android:layout_alignParentEnd="true"
@@ -62,11 +64,13 @@
         android:id="@+id/listPenyewaSection"
         android:layout_width="match_parent"
         android:layout_height="55dp"
+        android:layout_above="@+id/addPenyewaSection"
         android:layout_below="@+id/searchSection"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/addPenyewaSection">
+        android:background="@android:color/holo_orange_light">
 
         <ListView
+            android:id="@+id/listPenyewa"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
@@ -76,12 +80,14 @@
             tools:layout_editor_absoluteY="93dp" />
 
     </RelativeLayout>
+
     <RelativeLayout
+        android:id="@+id/addPenyewaSection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/addPenyewaSection"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:background="@color/primary_dark">
 
         <Button
             android:id="@+id/btnTambahPenyewa"

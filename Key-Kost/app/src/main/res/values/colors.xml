@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#f9d008</color>
+    <color name="primary">#f7dd5d</color>
     <color name="primary_dark">#d7b409</color>
     <color name="primary_darker">#a98d07</color>
-    <color name="accent">#FFFFFF</color>
+    <color name="accent">#ffffff</color>
 
     <color name="black">#000000</color>
     <color name="jet">#222222</color>

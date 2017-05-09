@@ -92,6 +92,8 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onLoginSuccess() {
         _loginButton.setEnabled(true);
+        Intent nextActivity = new Intent(this.getApplicationContext(),KelolaPenyewa.class);
+        startActivity(nextActivity);
         finish();
     }
 
