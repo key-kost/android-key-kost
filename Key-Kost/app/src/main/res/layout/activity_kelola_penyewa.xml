@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tna_team.key_kost.KelolaPenyewa">
+
+    <RelativeLayout
+        android:id="@+id/headerSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView"
+            android:layout_alignParentTop="true"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="337dp"
+            android:layout_height="48dp"
+            android:fontFamily="casual"
+            android:text="Kelola Penyewa Kos"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="219dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageView2" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/searchSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="49dp">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="376dp"
+            android:layout_height="46dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:ems="10"
+            android:hint="Search"
+            android:inputType="textPersonName"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:layout_editor_absoluteY="48dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/listPenyewaSection"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@+id/searchSection"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/addPenyewaSection">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            tools:layout_editor_absoluteX="-3dp"
+            tools:layout_editor_absoluteY="93dp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addPenyewaSection"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/btnTambahPenyewa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Tambah Penyewa Kos" />
+    </RelativeLayout>
+</RelativeLayout>
