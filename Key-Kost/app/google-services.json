@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1025072603354",
+    "firebase_url": "https://key-kost.firebaseio.com",
+    "project_id": "key-kost",
+    "storage_bucket": "key-kost.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025072603354:android:8dc138c44500fcec",
+        "android_client_info": {
+          "package_name": "com.tna_team.key_kost"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1025072603354-o3ch3gbjhovoqp3ippt718ia9og5hj6e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsk7W3hoJHbPyh5_xhWUJ1fwtmMHVfXWg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
