@@ -22,10 +22,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    //splash screen
-
-    //login & signup
-
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.github.ViksaaSkool:AwesomeSplash:v1.0.0'
     compile 'com.android.support:design:22.2.0'
@@ -33,4 +29,11 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.github.dakatso:livebutton:1.0.0'
     testCompile 'junit:junit:4.12'
+
+    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.android.support:palette-v7:24.2.1'
+    compile 'com.android.support:cardview-v7:24.2.1'
+    compile 'com.android.support:recyclerview-v7:24.2.1'
 }
+
+apply plugin: 'com.google.gms.google-services'
