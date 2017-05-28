@@ -21,6 +21,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.tna_team.key_kost.model.Penyewa;
+import com.tna_team.key_kost.model.User;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,12 +32,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 public class KelolaPenyewa extends AppCompatActivity {
     private Button btnTambahPenyewaKos;
     private ListView listView;
     private EditText edSearch;
     private List<Penyewa> listOfPenyewa = new ArrayList<>();
     private ProgressDialog progressDialog = null;
+
+    public static User userLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
