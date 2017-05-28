@@ -13,19 +13,20 @@
         tools:replace="android:icon"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginActivity"
-            android:theme="@style/AppTheme.Dark">
+            android:name=".SplashScreen"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LoginActivity" android:theme="@style/AppTheme.Dark"/>
         <activity android:name=".KelolaPenyewa" />
         <activity android:name=".DetailPenyewa" />
         <activity android:name=".TambahAtauUbahPenyewaKos" />
         <activity android:name=".LogActivity" android:theme="@style/AppTheme.Custom"/>
-        <activity android:name=".HomeActivity" android:theme="@style/AppTheme.Custom"></activity>
+        <activity android:name=".HomeActivity" android:theme="@style/AppTheme.Custom"/>
     </application>
 
 </manifest>
