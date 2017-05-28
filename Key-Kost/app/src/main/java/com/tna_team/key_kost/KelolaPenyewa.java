@@ -51,6 +51,7 @@ public class KelolaPenyewa extends AppCompatActivity {
         btnTambahPenyewaKos = (Button) findViewById(R.id.btnTambahPenyewa);
         listView = (ListView) findViewById(R.id.listPenyewa);
         edSearch = (EditText) findViewById(R.id.edSearch);
+//        edSearch.setVisibility(View.INVISIBLE);
 
         progressDialog = new ProgressDialog(KelolaPenyewa.this);
         getAllPenyewa();
@@ -68,6 +69,7 @@ public class KelolaPenyewa extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                DetailPenyewa.penyewa=listOfPenyewa.get(i);
                 Intent next = new Intent(view.getContext(),DetailPenyewa.class);
                 startActivity(next);
             }
@@ -88,11 +90,6 @@ public class KelolaPenyewa extends AppCompatActivity {
             result.add(listOfPenyewa.get(i).getFullName());
         }
         listView.setAdapter(new ArrayAdapter<String>(getApplication(),android.R.layout.simple_list_item_1,result));
-    }
-
-    @Override
-    public void onBackPressed() {
-        Toast.makeText(getApplicationContext(),"You cannot back to login",Toast.LENGTH_SHORT).show();
     }
 
     public void getAllPenyewa(){
@@ -149,5 +146,11 @@ public class KelolaPenyewa extends AppCompatActivity {
         };
         progressDialog.show();
         requestQueue.add(request);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(KelolaPenyewa.this,HomeActivity.class);
+        startActivity(intent);
     }
 }

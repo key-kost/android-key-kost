@@ -18,12 +18,12 @@
             android:id="@+id/edNama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="38dp"
+            android:layout_marginTop="17dp"
             android:ems="10"
             android:hint="Nama"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
 
         <EditText
             android:id="@+id/edEmail"
@@ -48,40 +48,52 @@
             android:layout_alignParentStart="true" />
 
         <EditText
-            android:id="@+id/edInstansi"
+            android:id="@+id/edNoKamar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Instansi/Sekolah/Perguruan Tinggi"
-            android:inputType="textPersonName"
-            android:layout_marginTop="25dp"
+            android:layout_alignParentStart="true"
             android:layout_below="@+id/edNomorHandphone"
-            android:layout_alignParentStart="true" />
+            android:layout_marginTop="25dp"
+            android:ems="10"
+            android:hint="Nomor Kamar"
+            android:inputType="textPersonName"/>
 
 
         <EditText
-            android:id="@+id/edUang"
+            android:id="@+id/edRfid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="19dp"
             android:ems="10"
-            android:hint="Uang Kos "
-            android:inputType="numberDecimal"
-            android:layout_below="@+id/edInstansi"
+            android:hint="RFID"
+            android:inputType="text"
+            android:layout_below="@+id/edNoKamar"
             android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"/>
 
         <EditText
             android:id="@+id/edTanggal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="19dp"
             android:ems="10"
             android:hint="Tanggal Habis"
             android:inputType="date"
-            android:layout_below="@+id/edUang"
+            android:layout_below="@+id/edRfid"
             android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"/>
+
+        <EditText
+            android:id="@+id/edAlamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Alamat"
+            android:inputType="textMultiLine"
+            android:layout_below="@+id/edTanggal"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="13dp"
+            android:layout_alignParentEnd="true"/>
     </RelativeLayout>
 
 
@@ -113,4 +125,5 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="68dp" />
     </RelativeLayout>
+
 </RelativeLayout>
