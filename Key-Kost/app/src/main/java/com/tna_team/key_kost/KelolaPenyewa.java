@@ -11,12 +11,16 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.tna_team.key_kost.model.User;
+
 import java.util.ArrayList;
 
 public class KelolaPenyewa extends AppCompatActivity {
     private Button btnTambahPenyewaKos;
     private ListView listView;
     private EditText edSearch;
+
+    public static User userLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
