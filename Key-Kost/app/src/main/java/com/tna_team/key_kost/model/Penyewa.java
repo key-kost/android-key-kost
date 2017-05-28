@@ -5,7 +5,27 @@ package com.tna_team.key_kost.model;
  */
 
 public class Penyewa {
-    private String id,rfidId,fullName,email,noKamar,jenisKelamin,telp,alamat,image,registerDate,expDate;
+    private String id;
+    private String rfidId;
+    private String fullName;
+    private String email;
+    private String noKamar;
+    private String jenisKelamin;
+    private String telp;
+    private String alamat;
+    private String image;
+    private String registerDate;
+    private String expDate;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    private String password;
     public Penyewa(){}
 
     public String getId() {

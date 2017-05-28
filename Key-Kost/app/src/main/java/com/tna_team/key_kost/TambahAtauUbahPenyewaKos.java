@@ -13,12 +13,17 @@ import android.widget.Toast;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request.Method;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.tna_team.key_kost.model.Penyewa;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,9 +36,8 @@ public class TambahAtauUbahPenyewaKos extends AppCompatActivity {
     private EditText edNoHp;
     private EditText edEmail;
     private EditText edNomorKamar;
-    private EditText edTanggal;
     private EditText edRfid;
-    private EditText edAlamat;
+    private EditText edAlamat,edPassword;
     private ProgressDialog progressDialog;
     public static Penyewa penyewa;
 
@@ -58,18 +62,17 @@ public class TambahAtauUbahPenyewaKos extends AppCompatActivity {
         edEmail = (EditText) findViewById(R.id.edEmail);
         edNomorKamar = (EditText) findViewById(R.id.edNoKamar);
 
-        edTanggal = (EditText) findViewById(R.id.edTanggal);
-        edTanggal.setVisibility(View.INVISIBLE);
-
         edRfid = (EditText) findViewById(R.id.edRfid);
         edAlamat = (EditText) findViewById(R.id.edAlamat);
+
+        edPassword = (EditText) findViewById(R.id.edPassword);
 
         if(TambahAtauUbahPenyewaKos.flagEditTambah.equalsIgnoreCase("UBAH")){
             edNama.setText(TambahAtauUbahPenyewaKos.penyewa.getFullName());
             edNoHp.setText(TambahAtauUbahPenyewaKos.penyewa.getTelp());
             edEmail.setText(TambahAtauUbahPenyewaKos.penyewa.getEmail());
             edNomorKamar.setText(TambahAtauUbahPenyewaKos.penyewa.getNoKamar());
-//            edTanggal.setText(TambahAtauUbahPenyewaKos.penyewa.getExpDate());
+            edPassword.setText(TambahAtauUbahPenyewaKos.penyewa.getPassword());
             edRfid.setText(TambahAtauUbahPenyewaKos.penyewa.getRfidId());
             edAlamat.setText(TambahAtauUbahPenyewaKos.penyewa.getAlamat());
         }
@@ -88,7 +91,11 @@ public class TambahAtauUbahPenyewaKos extends AppCompatActivity {
             public void onClick(View view) {
                 if(TambahAtauUbahPenyewaKos.flagEditTambah=="TAMBAH"){
 //                    Toast.makeText(view.getContext(),"Sorry Add Function on development",Toast.LENGTH_SHORT).show();
-                    tambahPenyewa();
+                    try {
+                        tambahPenyewa();
+                    } catch (JSONException e) {
+                        Log.e("error",e.getMessage());
+                    }
                 }
                 else if(TambahAtauUbahPenyewaKos.flagEditTambah=="UBAH"){
 //                    Toast.makeText(view.getContext(),"Sorry Edit Function on development",Toast.LENGTH_SHORT).show();
@@ -128,6 +135,7 @@ public class TambahAtauUbahPenyewaKos extends AppCompatActivity {
                 params.put("email",String.valueOf(edEmail.getText()));
                 params.put("telp",String.valueOf(edNoHp.getText()));
                 params.put("alamat",String.valueOf(edAlamat.getText()));
+                params.put("password",String.valueOf(edPassword.getText()));
                 return params;
             }
 
@@ -142,19 +150,30 @@ public class TambahAtauUbahPenyewaKos extends AppCompatActivity {
         requestQueue.add(ubahPenyewa);
     }
 
-    private void tambahPenyewa(){
+    private void tambahPenyewa() throws JSONException{
         RequestQueue requestQueue = Volley.newRequestQueue(TambahAtauUbahPenyewaKos.this);
-        StringRequest tambahPenyewa = new StringRequest(Method.POST, "http://ditoraharjo.co/keykost/api/v1/penyewa",
-                new Listener<String>() {
+
+        JSONObject params = new JSONObject();
+        params.put("id_pemilikKost",String.valueOf(HomeActivity.userLogin.getPemilikKost_id()));
+        params.put("fullname",String.valueOf(edNama.getText()));
+        params.put("rfid_id",String.valueOf(edRfid.getText()));
+        params.put("no_kamar",String.valueOf(edNomorKamar.getText()));
+        params.put("email",String.valueOf(edEmail.getText()));
+        params.put("telp",String.valueOf(edNoHp.getText()));
+        params.put("alamat",String.valueOf(edAlamat.getText()));
+        params.put("password",String.valueOf(edPassword.getText()));
+
+        JsonObjectRequest tambahPenyewa = new JsonObjectRequest(Method.POST, "http://ditoraharjo.co/keykost/api/v1/penyewa",params,
+                new Response.Listener<JSONObject>() {
                     @Override
-                    public void onResponse(String response) {
+                    public void onResponse(JSONObject response) {
                         Toast.makeText(TambahAtauUbahPenyewaKos.this,"Tambah Data Penyewa Sukses",Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();
                         Intent intent = new Intent(TambahAtauUbahPenyewaKos.this,KelolaPenyewa.class);
                         startActivity(intent);
                     }
                 },
-                new ErrorListener() {
+                new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Log.e("Error Tambah : ",error.toString());
@@ -162,18 +181,6 @@ public class TambahAtauUbahPenyewaKos extends AppCompatActivity {
                         progressDialog.dismiss();
                     }
                 }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> params = new HashMap<>();
-                params.put("id_pemilikKost",String.valueOf(HomeActivity.userLogin.getPemilikKost_id()));
-                params.put("fullname",String.valueOf(edNama.getText()));
-                params.put("rfid_id",String.valueOf(edRfid.getText()));
-                params.put("no_kamar",String.valueOf(edNomorKamar.getText()));
-                params.put("email",String.valueOf(edEmail.getText()));
-                params.put("telp",String.valueOf(edNoHp.getText()));
-                params.put("alamat",String.valueOf(edAlamat.getText()));
-                return params;
-            }
 
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {

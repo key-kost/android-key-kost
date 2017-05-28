@@ -72,16 +72,16 @@
             android:layout_alignParentEnd="true"/>
 
         <EditText
-            android:id="@+id/edTanggal"
+            android:id="@+id/edPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/edRfid"
             android:layout_marginTop="19dp"
             android:ems="10"
-            android:hint="Tanggal Habis"
-            android:inputType="date"
-            android:layout_below="@+id/edRfid"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"/>
+            android:hint="Password"
+            android:inputType="textPassword"/>
 
         <EditText
             android:id="@+id/edAlamat"
@@ -90,7 +90,7 @@
             android:ems="10"
             android:hint="Alamat"
             android:inputType="textMultiLine"
-            android:layout_below="@+id/edTanggal"
+            android:layout_below="@+id/edPassword"
             android:layout_alignParentStart="true"
             android:layout_marginTop="13dp"
             android:layout_alignParentEnd="true"/>
