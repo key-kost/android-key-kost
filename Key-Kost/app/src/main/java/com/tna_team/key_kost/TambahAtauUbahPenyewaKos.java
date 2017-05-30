@@ -111,7 +111,7 @@ public class TambahAtauUbahPenyewaKos extends AppCompatActivity {
                 new Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(TambahAtauUbahPenyewaKos.this,"Ubah Data Penyewa Sukses",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(TambahAtauUbahPenyewaKos.this,"Updating Data Success",Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();
                         Intent intent = new Intent(TambahAtauUbahPenyewaKos.this,KelolaPenyewa.class);
                         startActivity(intent);
@@ -167,7 +167,7 @@ public class TambahAtauUbahPenyewaKos extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Toast.makeText(TambahAtauUbahPenyewaKos.this,"Tambah Data Penyewa Sukses",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(TambahAtauUbahPenyewaKos.this,"Adding Data Success",Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();
                         Intent intent = new Intent(TambahAtauUbahPenyewaKos.this,KelolaPenyewa.class);
                         startActivity(intent);
@@ -176,7 +176,7 @@ public class TambahAtauUbahPenyewaKos extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.e("Error Tambah : ",error.toString());
+                        Log.e("Error Adding : ",error.toString());
                         Toast.makeText(TambahAtauUbahPenyewaKos.this,error.getMessage(),Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();
                     }

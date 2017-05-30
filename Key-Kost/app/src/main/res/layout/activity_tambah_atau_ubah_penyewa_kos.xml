@@ -80,15 +80,14 @@
             android:layout_below="@+id/edRfid"
             android:layout_marginTop="19dp"
             android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"/>
+            android:hint="Password"/>
 
         <EditText
             android:id="@+id/edAlamat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Alamat"
+            android:hint="Alamat Asal"
             android:inputType="textMultiLine"
             android:layout_below="@+id/edPassword"
             android:layout_alignParentStart="true"

@@ -116,6 +116,7 @@ public class KelolaPenyewa extends AppCompatActivity {
                                 penyewa.setExpDate(indexObject.getString("exp_date"));
                                 penyewa.setFullName(indexObject.getString("fullname"));
                                 penyewa.setId(indexObject.getString("id"));;
+                                //penyewa.setPassword(indexObject.getString("password"));
                                 penyewa.setImage(indexObject.getString("image"));
                                 penyewa.setJenisKelamin(indexObject.getString("jenis_kelamin"));
                                 penyewa.setNoKamar(indexObject.getString("no_kamar"));
