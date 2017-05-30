@@ -22,8 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" android:theme="@style/AppTheme.Dark"/>
-        <activity android:name=".KelolaPenyewa" />
-        <activity android:name=".DetailPenyewa" />
+        <activity android:name=".KelolaPenyewa" android:theme="@style/AppTheme.Custom"/>
+        <activity android:name=".DetailPenyewa" android:theme="@style/AppTheme.Custom"/>
         <activity android:name=".TambahAtauUbahPenyewaKos" />
         <activity android:name=".LogActivity" android:theme="@style/AppTheme.Custom"/>
         <activity android:name=".HomeActivity" android:theme="@style/AppTheme.Custom"/>

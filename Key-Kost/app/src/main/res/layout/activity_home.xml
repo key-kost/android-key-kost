@@ -21,7 +21,7 @@
             android:layout_gravity="center_horizontal"
             android:text="KEY-KOST"
             android:layout_marginBottom="20dp"
-            android:textColor="#a68d10"
+            android:textColor="#d7b714"
             android:textSize="35dp"
             android:textStyle="bold" />
 
@@ -37,8 +37,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
+            android:background="@drawable/button_background"
+            android:textColor="#fff"
             android:padding="12dp"
-            android:text="Kelola Penyewa"/>
+            android:text="Manage Renter"/>
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_log"
@@ -46,8 +48,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
+            android:background="@drawable/button_background"
+            android:textColor="#fff"
             android:padding="12dp"
-            android:text="Lihat Log"/>
+            android:text="Show Log"/>
 
     </LinearLayout>
 </ScrollView>

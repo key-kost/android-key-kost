@@ -4,70 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/accent"
     tools:context="com.tna_team.key_kost.KelolaPenyewa">
 
-    <RelativeLayout
-        android:id="@+id/headerSection"
-        android:layout_width="match_parent"
+    <!--<FrameLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_above="@+id/addPenyewaSection">-->
+
+        <!--<android.support.design.widget.FloatingActionButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:backgroundTint="@color/primary_dark"-->
+            <!--app:fabSize="normal"-->
+            <!--android:layout_gravity="bottom|right"-->
+            <!--app:srcCompat="@drawable/refresh"/>-->
+    <!--</FrameLayout>-->
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/primary_dark">
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/textView"
-            android:layout_alignParentTop="true"
-            app:srcCompat="@android:drawable/btn_star_big_on" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="337dp"
-            android:layout_height="48dp"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/imageView2"
-            android:fontFamily="casual"
-            android:text="Kelola Penyewa Kos"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textColor="@color/accent"
-            android:textSize="30sp"
-            tools:layout_editor_absoluteX="24dp"
-            tools:layout_editor_absoluteY="219dp" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/searchSection"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="49dp">
-
-        <EditText
-            android:id="@+id/edSearch"
-            android:layout_width="376dp"
-            android:layout_height="46dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:ems="10"
-            android:hint="Search"
-            android:inputType="textPersonName"
-            app:layout_constraintHorizontal_bias="0.503"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            tools:layout_editor_absoluteY="48dp" />
-    </RelativeLayout>
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="13dp"
+        android:text="DATA RENTER"
+        android:textColor="#d7b714"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
     <RelativeLayout
         android:id="@+id/listPenyewaSection"
         android:layout_width="match_parent"
         android:layout_height="55dp"
+        android:layout_marginTop="70dp"
         android:layout_above="@+id/addPenyewaSection"
-        android:layout_below="@+id/searchSection"
         android:layout_centerHorizontal="true"
-        android:background="@android:color/holo_orange_light">
+        android:layout_alignParentTop="true">
 
         <ListView
             android:id="@+id/listPenyewa"
@@ -81,19 +58,21 @@
 
     </RelativeLayout>
 
+
+
     <RelativeLayout
         android:id="@+id/addPenyewaSection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:background="@color/primary_dark">
+        android:layout_alignParentStart="true">
 
         <Button
             android:id="@+id/btnTambahPenyewa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
             android:layout_alignParentEnd="true"
-            android:text="Tambah Penyewa Kos" />
+            android:text="Add New Kost Renter" />
     </RelativeLayout>
 </RelativeLayout>

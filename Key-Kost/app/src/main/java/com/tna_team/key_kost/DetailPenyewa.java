@@ -82,7 +82,7 @@ public class DetailPenyewa extends AppCompatActivity {
                 new Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(DetailPenyewa.this,"Hapus Data Penyewa Sukses",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(DetailPenyewa.this,"Delete data success",Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();
                         Intent intent = new Intent(DetailPenyewa.this,KelolaPenyewa.class);
                         startActivity(intent);

@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -36,7 +38,6 @@ import java.util.Map;
 public class KelolaPenyewa extends AppCompatActivity {
     private Button btnTambahPenyewaKos;
     private ListView listView;
-    private EditText edSearch;
     private List<Penyewa> listOfPenyewa = new ArrayList<>();
     private ProgressDialog progressDialog = null;
 
@@ -46,16 +47,17 @@ public class KelolaPenyewa extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kelola_penyewa);
-        getSupportActionBar().hide();
+        setTitle("Manage Renter");
 
         btnTambahPenyewaKos = (Button) findViewById(R.id.btnTambahPenyewa);
         listView = (ListView) findViewById(R.id.listPenyewa);
-        edSearch = (EditText) findViewById(R.id.edSearch);
-//        edSearch.setVisibility(View.INVISIBLE);
 
-        progressDialog = new ProgressDialog(KelolaPenyewa.this);
+        progressDialog = new ProgressDialog(KelolaPenyewa.this,
+                R.style.AppTheme_Dark_Dialog);
+        progressDialog.setIndeterminate(true);
+        progressDialog.setMessage("Getting Log Data...");
+        progressDialog.show();
         getAllPenyewa();
-//        setDummyListView();
 
         btnTambahPenyewaKos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,20 +78,26 @@ public class KelolaPenyewa extends AppCompatActivity {
         });
     }
 
-    public void setDummyListView(){
-        ArrayList<String> dummySet = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            dummySet.add("Data Dummmy "+(i+1));
-        }
-        listView.setAdapter(new ArrayAdapter<String>(getApplication(),android.R.layout.simple_list_item_1,dummySet));
-    }
-
     public void setListPenyewa(){
         ArrayList<String> result = new ArrayList<>();
         for (int i = 0; i < listOfPenyewa.size(); i++) {
             result.add(listOfPenyewa.get(i).getFullName());
         }
-        listView.setAdapter(new ArrayAdapter<String>(getApplication(),android.R.layout.simple_list_item_1,result));
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>
+                (getApplicationContext(), android.R.layout.simple_list_item_1, result){
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent){
+                View view = super.getView(position, convertView, parent);
+
+                TextView tv = (TextView) view.findViewById(android.R.id.text1);
+
+                tv.setTextColor(getResources().getColor(R.color.primary_dark));
+                return view;
+            }
+        };
+        listView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 
     public void getAllPenyewa(){
