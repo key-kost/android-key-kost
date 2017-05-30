@@ -79,8 +79,9 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/edRfid"
             android:layout_marginTop="19dp"
+            android:inputType="textPassword"
             android:ems="10"
-            android:hint="Password"/>
+            android:hint="Password" />
 
         <EditText
             android:id="@+id/edAlamat"
